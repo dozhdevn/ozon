@@ -1,0 +1,48 @@
+
+.main{
+ display: flex;
+}
+
+.filter {
+    h5{
+        font-size: 1.25rem;
+    }
+    p{
+        margin-top: 10px;
+        display: block;
+        font-size: 14px;
+        line-height: 13px;
+        margin-bottom: 10px;
+        font-weight: 700;
+    }
+    form {
+        display: flex;
+        margin-bottom: 7px;
+        width: 100%;
+
+        .inputWrapper {
+            display: flex;
+            margin-right: 5px;
+        }
+
+        label {
+            font-size: 14px;
+            padding: 0 3px 0 0;
+            color: #999;
+        }
+        input {
+            width: 100%;
+            outline: none;
+        }
+    }
+
+}
+
+.products{
+    padding: 20px 10px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1070px;
+    border: 1px solid #ededed;
+}
