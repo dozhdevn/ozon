@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from 'react';
 
 import Card from '../Card'
 import styles from './Main.module.scss'
 
-const Main = ( {data, onAddItemToCart} ) => {
+const Main = ( {filteredItems, onAddItemToCart, onChecked, onFilteredByPrice, minValue, maxValue} ) => {
 
     return (
         <main>     
@@ -15,23 +14,23 @@ const Main = ( {data, onAddItemToCart} ) => {
                         <form>
                             <div className={styles.inputWrapper}>
                                 <label htmlFor="min">от</label>
-                                <input id ="min" type="number" />
+                                <input onChange = { (e) => onFilteredByPrice(e.target.value, maxValue)} id ="min" type="text" />
                             </div>
                             <div className={styles.inputWrapper}>
                                 <label htmlFor="max">до</label>
-                                <input id ="max" type="number" />
+                                <input onChange = { (e) => onFilteredByPrice(minValue, e.target.value)} id ="max" type="text" />
                             </div>
                         </form>
 
-                        <div className="filterCheck">
-                            <input type="checkbox" />
+                        <div className={styles.filterCheck}>
+                            <input onInput = {(e) => onChecked(e.target.checked)} type="checkbox" />
                             <span>Акция</span>
                         </div>
                     </div>
                     <div className={styles.products}>
                             
                             {
-                                data.map((item, i) => (
+                                filteredItems.map((item, i) => (
                                     <Card
                                     key ={i}
                                     item={item}

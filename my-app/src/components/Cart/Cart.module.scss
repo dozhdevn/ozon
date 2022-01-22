@@ -45,12 +45,14 @@
 
 .cartWrapper {
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
     border: 1px solid #4d5f713f;
     border-radius: 3px;
     padding: 20px;
     margin: 25px 0;
+    h2 {
+        margin: 0 auto;
+    }
 }
 
 .cartClose {

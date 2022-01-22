@@ -1,9 +1,12 @@
 
 .main{
- display: flex;
+    padding-left: 15px;
+    display: flex;
 }
 
 .filter {
+    max-width: 16%;
+    margin-right: 10px;
     h5{
         font-size: 1.25rem;
     }
@@ -22,6 +25,7 @@
 
         .inputWrapper {
             display: flex;
+            align-items: center;
             margin-right: 5px;
         }
 
@@ -31,18 +35,45 @@
             color: #999;
         }
         input {
+            height: 25px;
             width: 100%;
             outline: none;
+        }
+    }
+    .filterCheck {
+        input {
+            margin-right: 8px;
+        }
+        span {
+            color: #4d5f71;
+            font-size: 14px;
         }
     }
 
 }
 
 .products{
-    padding: 20px 10px;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-wrap: wrap;
-    max-width: 1070px;
-    border: 1px solid #ededed;
+    flex-basis: 83%;
+}
+
+@media(max-width: 1200px) {
+    .filter{
+        max-width: 20%
+    }
+    .products {
+        flex-basis: 75%;
+    }  
+}
+
+@media(max-width: 992px) {
+    .filter {
+        display: none;
+    }
+
+    .products {
+        flex-basis: 100%;
+    }
 }
